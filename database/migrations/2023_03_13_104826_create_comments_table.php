@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->string('content');
             $table->foreignId('group_id')
             ->constrained('groups')
             ->onDelete('cascade')
@@ -20,7 +22,6 @@ return new class extends Migration
             ->constrained('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->primary(['group_id' , 'user_id']);
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('comments');
     }
 };

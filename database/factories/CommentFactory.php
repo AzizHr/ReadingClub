@@ -19,9 +19,14 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'comment_content' => fake()->text(),
+            'content' => fake()->text(),
             'group_id' => Group::factory(),
             'user_id' => User::factory()
         ];
+    }
+
+    public function user()
+    {
+        $this->belongsTo(User::class);
     }
 }

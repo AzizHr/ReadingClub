@@ -18,12 +18,12 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'book_title' => fake()->title(),
-            'book_description' => fake()->text(),
-            'book_author' => fake()->name(),
-            'book_cover' => fake()->imageUrl(),
-            'likes' => fake()->numberBetween(0 , 100),
-            'category_id' => Category::factory(),
+            'title' => fake()->title(),
+            'image' => fake()->imageUrl(),
+            'description' => fake()->text(),
+            'author' => fake()->name(),
+            'is_archived' => fake()->numberBetween(0 , 1),
+            'category_id' => Category::factory()
         ];
     }
 }

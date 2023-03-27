@@ -19,8 +19,8 @@ class MemberFactory extends Factory
     public function definition(): array
     {
         return [
-            'group_id' => Group::factory() ,
-            'user_id' => User::factory()
+            'user_id' => User::factory(),
+            'group_id' => Group::factory()
         ];
     }
 }

@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('group_name');
-            $table->integer('group_members');
-            $table->foreignId('created_by')
-            ->constrained('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->id();
+            $table->string('name');
+            $table->text('image');
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreignId('book_id')
-            ->constrained('books')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->constrained('books')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

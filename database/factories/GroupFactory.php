@@ -19,9 +19,9 @@ class GroupFactory extends Factory
     public function definition(): array
     {
         return [
-            'group_name' => fake()->name(),
-            'group_members' => fake()->numberBetween(0 , 100),
-            'created_by' => User::factory(),
+            'name' => fake()->name(),
+            'image' => fake()->imageUrl(),
+            'user_id' => User::factory(),
             'book_id' => Book::factory()
         ];
     }

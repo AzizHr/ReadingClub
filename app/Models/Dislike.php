@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rating extends Model
+class Dislike extends Model
 {
     use HasFactory;
+    protected $fillable = [
+		'user_id', 'book_id'
+	];
 }
